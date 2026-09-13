@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import "./Listings.css";
 import { GlobeIcon, LightningIcon, ShieldIcon } from "./Icons";
-import { useGeoLocation } from "../hooks/useGeoLocation";
 
 const FB_URL = "https://www.facebook.com/share/1EQDA9pSYB/?mibextid=wwXIfr";
 
 export default function Listings() {
-  const geo = useGeoLocation();
   const [zip, setZip] = useState("");
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [location, setLocation] = useState({ city: "", state: "" });

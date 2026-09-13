@@ -10,69 +10,74 @@ export default function About() {
       <div className="section-inner">
         <div className="about-grid">
           {/* Portrait Column */}
-          <div className="about-image-column">
-            <div className="about-image-card">
+          <div className="about-visual">
+            <div className="about-card">
               <img
                 src="/karen-mitchell.jpg"
-                alt="Karen Mitchell — Principal Broker & Founder"
-                className="about-image"
+                alt="Karen Mitchell — Licensed Real Estate Agent"
+                className="about-portrait"
               />
-              <div className="about-image-overlay">
-                <span className="about-image-overlay__title">Karen Mitchell</span>
-                <span className="about-image-overlay__sub">Principal Broker &amp; Founder</span>
+              <div className="about-card-badge">
+                <span className="badge-title">Karen Mitchell</span>
+                <span className="badge-subtitle">Licensed Real Estate Professional</span>
               </div>
+            </div>
+            <div className="about-stat-box">
+              <span className="about-stat-number">12+</span>
+              <span className="about-stat-label">Years of Dedicated Client Placement</span>
             </div>
           </div>
 
-          {/* Editorial Bio Column */}
-          <div className="about-content">
-            <div className="section-tag">Direct Broker Care</div>
-            <h2 className="section-title">
-              Boutique leasing with <span>personal accountability.</span>
+          {/* Narrative Column */}
+          <div className="about-text-content">
+            <div className="about-kicker">Dedicated Representation</div>
+            <h2 className="about-headline">
+              Residential leasing with <span className="text-accent">direct accountability.</span>
             </h2>
 
-            <p className="about-lead">
-              Unlike large automated management corporations where tenants are treated like ticket numbers, Karen Mitchell Grande Estate was founded on a simple premise: residential leasing should be personal, transparent, and respectful.
+            <p className="about-intro">
+              Unlike large impersonal rental agencies or automated call centers where tenants feel like a ticket number, Karen Mitchell operates on a simple commitment: residential leasing should be honest, transparent, and personal.
             </p>
 
-            <p className="about-body">
-              With over 15 years in luxury residential leasing and property management, Principal Broker Karen Mitchell personally oversees our portfolio. We hand-select residences, guarantee that every home is in move-in ready condition, and remain your direct point of contact throughout your entire residency.
+            <p className="about-paragraph">
+              With over a decade of real estate experience, Karen personally reviews every applicant, hand-inspects every property, and stays in direct communication with you throughout your lease. No unhelpful chatbots, no automated delays — just honest guidance and verified homes.
             </p>
 
-            <div className="about-pillars">
-              <div className="about-pillar">
-                <div className="about-pillar__number">01</div>
-                <div>
-                  <h4 className="about-pillar__title">Physically Verified Homes</h4>
-                  <p className="about-pillar__desc">No bait-and-switch or misleading photos. Every residence is personally inspected and prepped before you move in.</p>
+            <div className="about-pillars-list">
+              <div className="pillar-item">
+                <div className="pillar-icon">01</div>
+                <div className="pillar-text">
+                  <h4>Physically Verified Homes</h4>
+                  <p>Zero misleading stock photography. Every residence is personally inspected, deep cleaned, and verified move-in ready before you arrive.</p>
                 </div>
               </div>
 
-              <div className="about-pillar">
-                <div className="about-pillar__number">02</div>
-                <div>
-                  <h4 className="about-pillar__title">Direct Broker Access</h4>
-                  <p className="about-pillar__desc">Speak with real decision-makers who care about your living experience, not an unhelpful AI chatbot.</p>
+              <div className="pillar-item">
+                <div className="pillar-icon">02</div>
+                <div className="pillar-text">
+                  <h4>Direct Agent Contact</h4>
+                  <p>Message Karen directly on Facebook or phone. You speak with the licensed agent in charge of the residence, not an outsourced call desk.</p>
                 </div>
               </div>
 
-              <div className="about-pillar">
-                <div className="about-pillar__number">03</div>
-                <div>
-                  <h4 className="about-pillar__title">Prompt Resolution Guarantee</h4>
-                  <p className="about-pillar__desc">All maintenance and repair requests are prioritized with licensed, vetted local professionals.</p>
+              <div className="pillar-item">
+                <div className="pillar-icon">03</div>
+                <div className="pillar-text">
+                  <h4>Prompt Maintenance Response</h4>
+                  <p>All property maintenance and repair requests are coordinated with licensed, vetted local professionals for your ongoing peace of mind.</p>
                 </div>
               </div>
             </div>
 
-            <div className="about-action">
+            <div className="about-cta-row">
               <a
                 href={FB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="about-btn"
+                className="about-primary-btn"
               >
-                <FacebookIcon size={16} color="currentColor" /> Message Karen on Facebook →
+                <FacebookIcon size={16} color="currentColor" />
+                <span>Message Karen on Facebook →</span>
               </a>
             </div>
           </div>

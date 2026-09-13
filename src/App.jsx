@@ -12,9 +12,8 @@ function HomePage() {
   useReveal();
 
   useEffect(() => {
-    const target = localStorage.getItem("karen_mitchell_scroll_target") || localStorage.getItem("karen_mitchell_scroll_target");
+    const target = localStorage.getItem("karen_mitchell_scroll_target");
     if (target) {
-      localStorage.removeItem("karen_mitchell_scroll_target");
       localStorage.removeItem("karen_mitchell_scroll_target");
       setTimeout(() => {
         document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
@@ -43,15 +42,12 @@ function getRoute() {
 
 function App() {
   const [route, setRoute] = useState(getRoute);
-
   const mountedRef = useRef(true);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", "light");
     mountedRef.current = true;
-    return () => {
-      mountedRef.current = false;
-    };
+    return () => { mountedRef.current = false; };
   }, []);
 
   const readRoute = useCallback(() => {

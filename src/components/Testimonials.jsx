@@ -1,6 +1,5 @@
 import React from "react";
 import "./Testimonials.css";
-import { useGeoLocation } from "../hooks/useGeoLocation";
 
 const STATE_CITIES = {
   FL: ["Miami", "Tampa", "Orlando", "Jacksonville", "Fort Lauderdale"],
@@ -82,7 +81,6 @@ function getReviewsForLocation(geo) {
 }
 
 export default function Testimonials() {
-  const geo = useGeoLocation();
   const reviews = getReviewsForLocation(geo);
 
   return (

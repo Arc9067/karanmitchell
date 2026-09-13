@@ -1,44 +1,31 @@
 import React from "react";
 
-/**
- * Karen Mitchell Grande Estate logo mark.
- * Monogram badge with KM initials.
- */
-export default function Logo({ size = 40, variant = "warm", className = "" }) {
+export default function Logo({ size = 36, className = "" }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 52 52"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-label="Karen Mitchell Grande Estate logo"
-      role="img"
-    >
-      <rect
-        x="1.5"
-        y="1.5"
-        width="49"
-        height="49"
-        rx="8"
-        fill="var(--bg-surface)"
-        stroke="var(--accent)"
-        strokeWidth="1.5"
-      />
-      <text
-        x="26"
-        y="33"
-        textAnchor="middle"
-        fill="var(--text-main)"
-        fontFamily="'Playfair Display', Georgia, serif"
-        fontSize="21"
-        fontWeight="600"
-        fontStyle="italic"
-        letterSpacing="0.02em"
+    <div className={`flex items-center gap-2.5 ${className}`} style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}>
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Karen Mitchell Realty logo"
+        role="img"
       >
-        KM
-      </text>
-    </svg>
+        <rect
+          x="1"
+          y="1"
+          width="38"
+          height="38"
+          rx="9"
+          fill="#0F172A"
+        />
+        <path
+          d="M12 28V12H15.5L22 21.5V12H25V28H21.5L15 18.5V28H12Z"
+          fill="#FFFFFF"
+        />
+        <circle cx="28.5" cy="14.5" r="2.5" fill="#D97706" />
+      </svg>
+    </div>
   );
 }
