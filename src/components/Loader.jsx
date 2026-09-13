@@ -5,7 +5,6 @@ export default function Loader() {
   return (
     <div className="loader-overlay">
       <div className="loader-brand">
-        <div className="loader-logo-box">KM</div>
         <div className="loader-name">
           <span>Karen Mitchell</span>
           <span className="loader-sub">Real Estate</span>

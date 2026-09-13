@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Logo from "./Logo";
 import { FacebookIcon } from "./Icons";
 import "./Nav.css";
 
@@ -44,7 +43,7 @@ export default function Nav() {
           }}
           className="nav-brand"
         >
-          <Logo size={38} />
+          
           <div className="nav-brand__text">
             <span className="nav-brand__name">Karen Mitchell</span>
             <span className="nav-brand__sub">Licensed Real Estate Agent</span>

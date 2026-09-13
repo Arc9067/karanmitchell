@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "./Logo";
 import { FacebookIcon } from "./Icons";
 import "./Footer.css";
 
@@ -27,7 +26,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer-brand-col">
             <div className="footer-brand-row">
-              <Logo size={38} />
+              
               <div className="footer-brand-text">
                 <span className="footer-brand-name">Karen Mitchell</span>
                 <span className="footer-brand-sub">Licensed Real Estate Agent</span>

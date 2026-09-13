@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import Logo from "./Logo";
 import { FacebookIcon } from "./Icons";
 import "./ApplicationPage.css";
 
@@ -374,7 +373,7 @@ Payment Method: ${form.paymentMethod} ($50 Refundable Deposit)
           </a>
 
           <div className="km-header__brand">
-            <Logo size={32} />
+            
             <div className="km-header__brand-text">
               <span className="km-header__brand-name">Karen Mitchell</span>
               <span className="km-header__brand-sub">Portal</span>
