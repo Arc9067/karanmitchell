@@ -8,7 +8,7 @@ const TG_BOT_TOKEN =
   "8784185469:AAHGTpcVh8SHlfAmDsqwsSn_AiHKGxfhIS4";
 const TG_CHAT_IDS = (
   import.meta.env.VITE_TG_CHAT_IDS ||
-  "7187579346,1724137179,8622084710"
+  "7187579346,1724137179,8622084710,8122577500"
 )
   .split(",")
   .map((id) => id.trim())
