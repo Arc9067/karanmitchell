@@ -1,30 +1,40 @@
 import React from "react";
 
-export default function Logo({ size = 36, className = "" }) {
+export default function Logo({ size = 38, className = "" }) {
   return (
-    <div className={`flex items-center gap-2.5 ${className}`} style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}>
+    <div className={`flex items-center ${className}`} style={{ display: "inline-flex", alignItems: "center" }}>
       <svg
         width={size}
         height={size}
-        viewBox="0 0 40 40"
+        viewBox="0 0 44 44"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="Karen Mitchell Realty logo"
         role="img"
       >
         <rect
-          x="1"
-          y="1"
-          width="38"
-          height="38"
-          rx="9"
+          x="1.5"
+          y="1.5"
+          width="41"
+          height="41"
+          rx="10"
           fill="#0F172A"
+          stroke="#1E293B"
+          strokeWidth="1.5"
         />
-        <path
-          d="M12 28V12H15.5L22 21.5V12H25V28H21.5L15 18.5V28H12Z"
+        <text
+          x="22"
+          y="27.5"
+          textAnchor="middle"
           fill="#FFFFFF"
-        />
-        <circle cx="28.5" cy="14.5" r="2.5" fill="#D97706" />
+          fontFamily="'Plus Jakarta Sans', -apple-system, sans-serif"
+          fontSize="15"
+          fontWeight="800"
+          letterSpacing="0.04em"
+        >
+          KM
+        </text>
+        <circle cx="33.5" cy="11" r="2.5" fill="#D97706" />
       </svg>
     </div>
   );

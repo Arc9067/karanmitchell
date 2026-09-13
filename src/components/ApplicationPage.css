@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   KAREN MITCHELL REALTY — MODERN APPLICATION DESK STYLES
+   KAREN MITCHELL REALTY — FULLY RESPONSIVE APPLICATION PORTAL
    ══════════════════════════════════════════════════════════════ */
 
 .km-portal {
@@ -8,48 +8,63 @@
   color: #0f172a;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Header */
 .km-header {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
   z-index: 50;
+  width: 100%;
 }
 
 .km-header__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
-  height: 72px;
+  padding: 0 16px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .km-header__inner {
+    padding: 0 24px;
+    height: 72px;
+  }
 }
 
 .km-header__back {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
   color: #64748b;
   text-decoration: none;
-  transition: color 0.2s ease;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #f1f5f9;
 }
 
 .km-header__back:hover {
   color: #0f172a;
+  background: #e2e8f0;
 }
 
 .km-header__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
 }
 
@@ -59,15 +74,21 @@
 }
 
 .km-header__brand-name {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 800;
   color: #0f172a;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
+@media (min-width: 640px) {
+  .km-header__brand-name {
+    font-size: 17px;
+  }
+}
+
 .km-header__brand-sub {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: #64748b;
   text-transform: uppercase;
@@ -77,79 +98,171 @@
 .km-header__secure {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12px;
+  gap: 4px;
+  font-size: 11px;
   font-weight: 700;
   color: #059669;
   background: #ecfdf5;
   border: 1px solid #a7f3d0;
-  padding: 5px 12px;
+  padding: 4px 8px;
   border-radius: 9999px;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .km-header__secure {
+    font-size: 12px;
+    padding: 5px 12px;
+    gap: 6px;
+  }
 }
 
 /* Main Layout */
 .km-body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px 80px 24px;
+  padding: 20px 16px 60px 16px;
   width: 100%;
   flex: 1;
+}
+
+@media (min-width: 640px) {
+  .km-body {
+    padding: 36px 24px 80px 24px;
+  }
 }
 
 .km-desk-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 36px;
-  align-items: start;
+  gap: 24px;
+  width: 100%;
 }
 
 @media (min-width: 960px) {
   .km-desk-grid {
-    grid-template-columns: 360px 1fr;
-    gap: 40px;
+    grid-template-columns: 340px 1fr;
+    gap: 36px;
+    align-items: start;
   }
 }
 
-/* Left Sidebar Desk */
-.km-sidebar {
+/* Mobile-Only Progress Banner */
+.km-mobile-top-card {
+  display: block;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+@media (min-width: 960px) {
+  .km-mobile-top-card {
+    display: none;
+  }
+}
+
+.km-mobile-agent-row {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: sticky;
-  top: 96px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.km-mobile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1d4ed8;
+}
+
+.km-mobile-agent-info h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.km-mobile-agent-info p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.km-mobile-progress-bar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.km-mobile-progress-fill {
+  height: 100%;
+  background: #1d4ed8;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.km-mobile-step-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Desktop Sidebar Desk (hidden on mobile to prevent overlapping!) */
+.km-sidebar-desktop {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .km-sidebar-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 92px;
+  }
 }
 
 .km-agent-badge-card {
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
-  padding: 24px;
+  padding: 20px;
   box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
 }
 
 .km-agent-badge-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
 .km-agent-avatar {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #1d4ed8;
 }
 
 .km-agent-meta h4 {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 800;
   color: #0f172a;
 }
 
 .km-agent-meta p {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: #64748b;
 }
@@ -157,14 +270,14 @@
 .km-agent-status {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-size: 11px;
   font-weight: 700;
   color: #059669;
   background: #ecfdf5;
-  padding: 3px 8px;
+  padding: 2px 7px;
   border-radius: 9999px;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .km-agent-status-dot {
@@ -175,47 +288,47 @@
 }
 
 .km-agent-note {
-  font-size: 13px;
+  font-size: 12px;
   color: #475569;
   line-height: 1.5;
   border-top: 1px solid #f1f5f9;
-  padding-top: 14px;
+  padding-top: 12px;
   font-style: italic;
 }
 
-/* Stepper Checklist */
+/* Stepper Checklist (Desktop) */
 .km-stepper-card {
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
-  padding: 20px 24px;
+  padding: 18px 20px;
   box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
 }
 
 .km-stepper-title {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #64748b;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .km-step-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 10px 0;
+  gap: 12px;
+  padding: 8px 0;
   position: relative;
 }
 
 .km-step-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  left: 14px;
-  top: 36px;
+  left: 13px;
+  top: 32px;
   width: 2px;
-  height: 18px;
+  height: 16px;
   background: #e2e8f0;
 }
 
@@ -224,13 +337,13 @@
 }
 
 .km-step-badge {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   background: #f1f5f9;
   color: #64748b;
@@ -243,7 +356,7 @@
   background: #1d4ed8;
   color: #ffffff;
   border-color: #1d4ed8;
-  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.15);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
 }
 
 .km-step-item.is-done .km-step-badge {
@@ -253,7 +366,7 @@
 }
 
 .km-step-info h5 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #0f172a;
 }
@@ -263,36 +376,32 @@
   color: #64748b;
 }
 
-/* Trust Perks Box */
+/* Trust Perks Box (Desktop) */
 .km-perks-card {
   background: #0f172a;
   color: #ffffff;
   border-radius: 16px;
-  padding: 20px 24px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .km-perk-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 12px;
   font-weight: 600;
   color: #e2e8f0;
-}
-
-.km-perk-icon {
-  font-size: 16px;
 }
 
 .km-fb-help {
   font-size: 12px;
   color: #94a3b8;
-  margin-top: 6px;
+  margin-top: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .km-fb-help a {
@@ -301,24 +410,26 @@
   text-decoration: underline;
 }
 
-/* Right Work Area: Main Form Card */
+/* Right Work Area: Form Card */
 .km-form-card {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 16px;
   border: 1px solid #e2e8f0;
-  padding: 32px 28px;
-  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.07);
+  padding: 24px 16px;
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06);
+  width: 100%;
 }
 
 @media (min-width: 640px) {
   .km-form-card {
-    padding: 40px 36px;
+    border-radius: 20px;
+    padding: 36px 32px;
   }
 }
 
 .km-form-header {
-  margin-bottom: 28px;
-  padding-bottom: 20px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
   border-bottom: 1px solid #f1f5f9;
 }
 
@@ -330,49 +441,57 @@
   letter-spacing: 0.08em;
   color: #1d4ed8;
   background: #eff6ff;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .km-form-header__title {
-  font-size: clamp(22px, 2.6vw, 30px);
+  font-size: 22px;
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
 }
 
+@media (min-width: 640px) {
+  .km-form-header__title {
+    font-size: 26px;
+  }
+}
+
 .km-form-header__desc {
-  font-size: 14px;
+  font-size: 13px;
   color: #64748b;
   line-height: 1.5;
 }
 
-/* Fields & Form Elements */
+/* Grid & Inputs */
 .km-grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
 @media (min-width: 600px) {
   .km-grid-2 {
     grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 }
 
 .km-grid-3 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  margin-bottom: 18px;
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
 @media (min-width: 600px) {
   .km-grid-3 {
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
   }
 }
 
@@ -380,7 +499,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .km-label {
@@ -400,13 +519,15 @@
 .km-input {
   background: #f8fafc;
   border: 1.5px solid #cbd5e1;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 12px 14px;
-  font-size: 15px;
+  font-size: 16px; /* 16px prevents iOS Safari auto-zoom! */
   color: #0f172a;
   font-family: inherit;
   outline: none;
   transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .km-input:focus {
@@ -426,21 +547,21 @@
   color: #dc2626;
 }
 
-/* Modern Toggles for Vehicles / Pets / Evictions */
+/* Modern Toggles */
 .km-toggle-card {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 14px 18px;
+  border-radius: 10px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .km-toggle-label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #1e293b;
 }
@@ -450,6 +571,7 @@
   background: #e2e8f0;
   padding: 3px;
   border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .km-toggle-btn {
@@ -467,46 +589,47 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Step 3: Deposit & Fee Box */
+/* Deposit Card */
 .km-deposit-card {
   background: #eff6ff;
   border: 1.5px solid #bfdbfe;
-  border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 24px;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 @media (min-width: 600px) {
   .km-deposit-card {
     flex-direction: row;
     align-items: center;
+    padding: 20px;
   }
 }
 
 .km-deposit-amount {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 800;
   color: #1d4ed8;
   background: #ffffff;
   border: 1.5px solid #bfdbfe;
-  padding: 10px 18px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
   text-align: center;
-  flex-shrink: 0;
+  align-self: flex-start;
 }
 
 .km-deposit-info h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   color: #0f172a;
   margin-bottom: 4px;
 }
 
 .km-deposit-info p {
-  font-size: 13px;
+  font-size: 12px;
   color: #475569;
   line-height: 1.5;
 }
@@ -515,12 +638,12 @@
   color: #1d4ed8;
 }
 
-/* Payment Method Cards */
+/* Payment Method Grid */
 .km-payment-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 640px) {
@@ -532,14 +655,14 @@
 .km-pay-tile {
   background: #f8fafc;
   border: 1.5px solid #cbd5e1;
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-radius: 8px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #334155;
 }
@@ -557,8 +680,8 @@
 }
 
 .km-pay-dot {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: 2px solid #94a3b8;
   display: flex;
@@ -571,17 +694,17 @@
   background: #1d4ed8;
 }
 
-/* Legal Certification Box */
+/* Legal Box */
 .km-legal-box {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 16px;
-  font-size: 12px;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 11px;
   color: #64748b;
   line-height: 1.6;
-  margin-bottom: 20px;
-  max-height: 130px;
+  margin-bottom: 16px;
+  max-height: 110px;
   overflow-y: auto;
 }
 
@@ -589,31 +712,35 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #1e293b;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 
 .km-terms-checkbox input {
-  margin-top: 3px;
+  margin-top: 2px;
   accent-color: #1d4ed8;
+  width: 16px;
+  height: 16px;
 }
 
 /* Signature Pad */
 .km-sig-container {
   background: #ffffff;
   border: 1.5px dashed #cbd5e1;
-  border-radius: 12px;
-  padding: 8px;
+  border-radius: 10px;
+  padding: 6px;
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .km-sig-canvas {
   width: 100%;
-  height: 150px;
+  height: 140px;
   display: block;
   touch-action: none;
   cursor: crosshair;
@@ -623,7 +750,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .km-sig-clear-btn {
@@ -633,71 +760,81 @@
   cursor: pointer;
 }
 
-.km-sig-clear-btn:hover {
-  text-decoration: underline;
-}
-
-/* Action Buttons */
+/* Buttons */
 .km-nav-buttons {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+  flex-direction: column;
+  gap: 10px;
   padding-top: 14px;
   border-top: 1px solid #f1f5f9;
+}
+
+@media (min-width: 540px) {
+  .km-nav-buttons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .km-prev-btn {
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
   color: #334155;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 12px 18px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
 }
 
-.km-prev-btn:hover {
-  background: #f1f5f9;
-  color: #0f172a;
+@media (min-width: 540px) {
+  .km-prev-btn {
+    width: auto;
+  }
 }
 
 .km-next-btn {
   background: #0f172a;
   color: #ffffff;
-  padding: 12px 26px;
-  border-radius: 10px;
+  padding: 13px 24px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.2s ease;
-  margin-left: auto;
+  width: 100%;
+  text-align: center;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
 }
 
-.km-next-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-1px);
+@media (min-width: 540px) {
+  .km-next-btn {
+    width: auto;
+    margin-left: auto;
+  }
 }
 
 .km-submit-btn {
   background: #1d4ed8;
   color: #ffffff;
-  padding: 14px 30px;
-  border-radius: 10px;
-  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 14px;
   font-weight: 800;
-  transition: all 0.2s ease;
-  margin-left: auto;
+  width: 100%;
+  text-align: center;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: 0 6px 18px rgba(29, 78, 216, 0.25);
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
 }
 
-.km-submit-btn:hover {
-  background: #1e40af;
-  transform: translateY(-1px);
+@media (min-width: 540px) {
+  .km-submit-btn {
+    width: auto;
+    margin-left: auto;
+  }
 }
 
 .km-submit-btn:disabled {
@@ -708,18 +845,18 @@
 /* Success View */
 .km-success-card {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 16px;
   border: 1px solid #e2e8f0;
-  padding: 40px 32px;
+  padding: 32px 20px;
   text-align: center;
-  box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.08);
-  max-width: 680px;
+  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .km-success-icon-wrap {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: #ecfdf5;
   color: #059669;
@@ -727,65 +864,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  margin: 0 auto 20px auto;
+  font-size: 28px;
+  margin: 0 auto 16px auto;
 }
 
 .km-success-title {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .km-success-desc {
-  font-size: 15px;
+  font-size: 14px;
   color: #475569;
   line-height: 1.6;
-  max-width: 520px;
-  margin: 0 auto 28px auto;
+  margin-bottom: 20px;
 }
 
 .km-success-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+}
+
+@media (min-width: 500px) {
+  .km-success-actions {
+    flex-direction: row;
+  }
 }
 
 .km-success-fb-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: #0f172a;
   color: #ffffff;
-  padding: 13px 24px;
+  padding: 12px 20px;
   border-radius: 9999px;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.km-success-fb-btn:hover {
-  background: #1d4ed8;
+@media (min-width: 500px) {
+  .km-success-fb-btn {
+    width: auto;
+  }
 }
 
 .km-success-home-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
   background: #f1f5f9;
   color: #334155;
-  padding: 13px 22px;
+  padding: 12px 20px;
   border-radius: 9999px;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.km-success-home-btn:hover {
-  background: #e2e8f0;
+@media (min-width: 500px) {
+  .km-success-home-btn {
+    width: auto;
+  }
 }
