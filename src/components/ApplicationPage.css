@@ -1,1041 +1,791 @@
-/* ══════════════════════════════════════════
-   MODERN MULTI-STEP PORTAL LAYOUT
-   Karen Mitchell Grande Estate
-   ══════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════
+   KAREN MITCHELL REALTY — MODERN APPLICATION DESK STYLES
+   ══════════════════════════════════════════════════════════════ */
 
-.portal-page {
+.km-portal {
   min-height: 100vh;
-  background: var(--bg);
-  color: var(--text-main);
-  padding-bottom: 5rem;
+  background: #f8fafc;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Sleek Minimal Header */
-.portal-header {
-  background: var(--bg);
-  border-bottom: 1px solid var(--gray-border);
-  padding: 0 1.5rem;
+/* Header */
+.km-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(26, 24, 22, 0.03);
+  z-index: 50;
 }
 
-.portal-header__inner {
-  max-width: 820px;
+.km-header__inner {
+  max-width: 1200px;
   margin: 0 auto;
-  height: 68px;
+  padding: 0 24px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.portal-header__back {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
+.km-header__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.portal-header__back:hover {
-  color: var(--accent);
+.km-header__back:hover {
+  color: #0f172a;
 }
 
-.portal-header__brand {
+.km-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.km-header__brand-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  text-decoration: none;
 }
 
-.portal-header__brand-name {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-main);
+.km-header__brand-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-.portal-header__brand-sub {
-  font-size: 0.62rem;
+.km-header__brand-sub {
+  font-size: 11px;
   font-weight: 600;
+  color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  margin-top: 2px;
+  letter-spacing: 0.04em;
 }
 
-.portal-lang-pill {
+.km-header__secure {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.78rem;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 5px 12px;
+  border-radius: 9999px;
+}
+
+/* Main Layout */
+.km-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 80px 24px;
+  width: 100%;
+  flex: 1;
+}
+
+.km-desk-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .km-desk-grid {
+    grid-template-columns: 360px 1fr;
+    gap: 40px;
+  }
+}
+
+/* Left Sidebar Desk */
+.km-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 96px;
+}
+
+.km-agent-badge-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
+}
+
+.km-agent-badge-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.km-agent-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1d4ed8;
+}
+
+.km-agent-meta h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.km-agent-meta p {
+  font-size: 12px;
   font-weight: 600;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: var(--r-full);
-  padding: 0.35rem 0.85rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  color: #64748b;
 }
 
-.portal-lang-pill:hover {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-/* Main Container */
-.portal-main {
-  max-width: 780px;
-  margin: 2.25rem auto 0;
-  padding: 0 1.25rem;
-}
-
-/* Designated Property Dossier */
-.portal-property-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--gray-border);
-  border-left: 4px solid var(--accent);
-  border-radius: var(--r-sm);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.portal-property-card__badge {
+.km-agent-status {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  margin-top: 4px;
+}
+
+.km-agent-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.km-agent-note {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+  font-style: italic;
+}
+
+/* Stepper Checklist */
+.km-stepper-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 20px 24px;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
+}
+
+.km-stepper-title {
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 16px;
 }
 
-.portal-property-card__address {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 0.45rem;
-}
-
-.portal-property-card__specs {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-}
-
-.portal-property-card__specs strong {
-  color: var(--text-main);
-}
-
-/* Stepper Progress Bar */
-.portal-stepper {
+.km-step-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  padding: 0 0.5rem;
+  gap: 14px;
+  padding: 10px 0;
+  position: relative;
 }
 
-.portal-step {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  color: var(--text-subtle);
-  transition: all 0.25s ease;
+.km-step-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 36px;
+  width: 2px;
+  height: 18px;
+  background: #e2e8f0;
 }
 
-.portal-step__num {
-  width: 32px;
-  height: 32px;
+.km-step-item.is-done:not(:last-child)::after {
+  background: #1d4ed8;
+}
+
+.km-step-badge {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
-  font-weight: 700;
-  background: var(--bg-surface);
-  border: 1.5px solid var(--gray-border);
-  color: var(--text-muted);
-  transition: all 0.25s ease;
+  font-size: 12px;
+  font-weight: 800;
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  flex-shrink: 0;
+  z-index: 1;
 }
 
-.portal-step__label {
-  font-size: 0.84rem;
+.km-step-item.is-active .km-step-badge {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.15);
+}
+
+.km-step-item.is-done .km-step-badge {
+  background: #059669;
+  color: #ffffff;
+  border-color: #059669;
+}
+
+.km-step-info h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.km-step-info p {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Trust Perks Box */
+.km-perks-card {
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.km-perk-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  color: #e2e8f0;
 }
 
-.portal-step.active .portal-step__num {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-  box-shadow: 0 0 0 4px var(--accent-light);
+.km-perk-icon {
+  font-size: 16px;
 }
 
-.portal-step.active .portal-step__label {
-  color: var(--text-main);
+.km-fb-help {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+.km-fb-help a {
+  color: #60a5fa;
   font-weight: 700;
+  text-decoration: underline;
 }
 
-.portal-step.done .portal-step__num {
-  background: #3d5a46;
-  border-color: #3d5a46;
-  color: #ffffff;
+/* Right Work Area: Main Form Card */
+.km-form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.07);
 }
 
-.portal-step.done .portal-step__label {
-  color: var(--text-muted);
+@media (min-width: 640px) {
+  .km-form-card {
+    padding: 40px 36px;
+  }
 }
 
-.portal-step-line {
-  flex: 1;
-  height: 2px;
-  background: var(--gray-border);
-  margin: 0 1rem;
-  transition: background 0.3s ease;
+.km-form-header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
 }
 
-.portal-step-line.done {
-  background: #3d5a46;
+.km-form-header__tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1d4ed8;
+  background: #eff6ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
 }
 
-/* Broker Trust Strip */
-.portal-trust-strip {
+.km-form-header__title {
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.km-form-header__desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Fields & Form Elements */
+.km-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 600px) {
+  .km-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.km-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 600px) {
+  .km-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.km-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.km-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-  padding: 0.85rem 1.25rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  margin-bottom: 1.75rem;
-  box-shadow: var(--shadow-sm);
 }
 
-.portal-trust-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid var(--accent);
+.km-label-req {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.km-input {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: #0f172a;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.km-input:focus {
+  background: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+}
+
+.km-input.has-err {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.km-err-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #dc2626;
+}
+
+/* Modern Toggles for Vehicles / Pets / Evictions */
+.km-toggle-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.km-toggle-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.km-toggle-btn-group {
+  display: flex;
+  background: #e2e8f0;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.km-toggle-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.km-toggle-btn.is-active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Step 3: Deposit & Fee Box */
+.km-deposit-card {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (min-width: 600px) {
+  .km-deposit-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.km-deposit-amount {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: #ffffff;
+  border: 1.5px solid #bfdbfe;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-align: center;
   flex-shrink: 0;
 }
 
-.portal-trust-info {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.km-deposit-info h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
 }
 
-.portal-trust-title {
-  font-family: var(--font-serif);
-  font-size: 0.94rem;
-  font-weight: 600;
-  color: var(--text-main);
-  line-height: 1.2;
-}
-
-.portal-trust-sub {
-  font-size: 0.74rem;
-  color: var(--text-muted);
-}
-
-.portal-trust-badge {
-  display: flex;
-  gap: 0.85rem;
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: var(--accent);
-  white-space: nowrap;
-}
-
-/* Error Banner */
-.portal-error-banner {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.9rem 1.25rem;
-  background: #fff3f3;
-  border: 1px solid #f8d7da;
-  border-radius: var(--r-sm);
-  color: #c53030;
-  font-size: 0.86rem;
-  margin-bottom: 1.75rem;
-}
-
-/* Portal Card Container */
-.portal-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-md);
-  padding: 2.5rem 2.25rem;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Pane Header */
-.portal-pane-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--gray-border);
-}
-
-.portal-pane-step {
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 0.35rem;
-}
-
-.portal-pane-title {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 0.45rem;
-  line-height: 1.2;
-}
-
-.portal-pane-desc {
-  font-size: 0.92rem;
-  color: var(--text-muted);
+.km-deposit-info p {
+  font-size: 13px;
+  color: #475569;
   line-height: 1.5;
-  margin: 0;
 }
 
-/* Fields & Grid */
-.portal-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.portal-grid-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.portal-field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.25rem;
-}
-
-.portal-label {
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 0.45rem;
-}
-
-.portal-label .req {
-  color: #c53030;
-}
-
-.portal-input {
-  width: 100%;
-  height: 48px;
-  background: var(--bg-input);
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  padding: 0 1rem;
-  font-size: 0.95rem;
-  color: var(--text-main);
-  font-family: var(--font-sans);
-  transition: all 0.2s ease;
-}
-
-.portal-input:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: #ffffff;
-  box-shadow: 0 0 0 3px var(--accent-light);
-}
-
-.portal-input.err {
-  border-color: #c53030;
-  background: #fffaf9;
-}
-
-.portal-err-msg {
-  font-size: 0.76rem;
-  color: #c53030;
-  margin-top: 0.35rem;
-}
-
-/* Segmented Chips for Yes/No */
-.portal-chips-group {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.25rem 0;
-  border-top: 1px solid var(--gray-border);
-  border-bottom: 1px solid var(--gray-border);
-  margin-bottom: 1.75rem;
-}
-
-.portal-chip-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.portal-chip-label {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-.portal-chip-toggle {
-  display: inline-flex;
-  background: var(--bg-input);
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-full);
-  padding: 3px;
-  gap: 3px;
-}
-
-.portal-chip-btn {
-  border: none;
-  background: none;
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.35rem 1rem;
-  border-radius: var(--r-full);
-  cursor: pointer;
-  color: var(--text-muted);
-  transition: all 0.2s ease;
-}
-
-.portal-chip-btn.active {
-  background: var(--accent);
-  color: #ffffff;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Fee Card Banner */
-.portal-fee-card {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: var(--accent-light);
-  border: 1px solid rgba(158, 103, 64, 0.25);
-  border-radius: var(--r-sm);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.75rem;
-}
-
-.portal-fee-amount {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.portal-fee-text strong {
-  display: block;
-  font-size: 0.96rem;
-  color: var(--text-main);
-  margin-bottom: 0.25rem;
-}
-
-.portal-fee-text p {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.45;
-  margin: 0;
+.km-deposit-info strong {
+  color: #1d4ed8;
 }
 
 /* Payment Method Cards */
-.portal-methods-grid {
+.km-payment-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.85rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
-.portal-method-card {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.9rem 1rem;
-  background: var(--bg-input);
-  border: 1.5px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: left;
+@media (min-width: 640px) {
+  .km-payment-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.portal-method-card:hover {
-  border-color: rgba(158, 103, 64, 0.4);
-}
-
-.portal-method-card.active {
-  background: #ffffff;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-light);
-}
-
-.portal-method-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1.5px solid var(--text-subtle);
-  background: #ffffff;
-  flex-shrink: 0;
-}
-
-.portal-method-card.active .portal-method-dot {
-  border-color: var(--accent);
-  background: var(--accent);
-}
-
-.portal-method-name {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-/* Terms Box */
-.portal-terms-box {
-  background: var(--bg-input);
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  padding: 1.1rem;
-  margin: 1.5rem 0;
-}
-
-.portal-terms-box p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Unified Verification Agreement & Signature Box */
-.portal-verification-box {
-  background: var(--bg-input);
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  padding: 1.5rem;
-  margin-bottom: 1.75rem;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.portal-verification-terms {
-  margin-bottom: 1.25rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-}
-
-.portal-verification-title {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.5rem;
-}
-
-.portal-verification-body {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.portal-sig-block {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.portal-sig-header {
+.km-pay-tile {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.65rem;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
 }
 
-.portal-sig-note {
-  font-size: 0.76rem;
-  color: var(--accent);
-  font-weight: 500;
-}
-
-/* Digital Signature Canvas Container */
-.sig {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
+.km-pay-tile:hover {
+  border-color: #1d4ed8;
   background: #ffffff;
-  border: 1.5px dashed rgba(158, 103, 64, 0.38);
-  border-radius: var(--r-sm);
-  overflow: hidden;
-  box-sizing: border-box;
 }
 
-.sig__canvas {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 160px;
+.km-pay-tile.is-selected {
+  border-color: #1d4ed8;
+  background: #eff6ff;
+  color: #1d4ed8;
+  box-shadow: 0 0 0 1px #1d4ed8;
+}
+
+.km-pay-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.km-pay-tile.is-selected .km-pay-dot {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+}
+
+/* Legal Certification Box */
+.km-legal-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-height: 130px;
+  overflow-y: auto;
+}
+
+.km-terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.km-terms-checkbox input {
+  margin-top: 3px;
+  accent-color: #1d4ed8;
+}
+
+/* Signature Pad */
+.km-sig-container {
+  background: #ffffff;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 8px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.km-sig-canvas {
+  width: 100%;
+  height: 150px;
   display: block;
   touch-action: none;
   cursor: crosshair;
-  background: #ffffff;
-  box-sizing: border-box;
 }
 
-.sig__clear {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.76rem;
-  font-weight: 600;
-  border-radius: var(--r-sm);
-  background: var(--bg-surface);
-  border: 1px solid var(--gray-border);
-  color: var(--text-muted);
+.km-sig-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.km-sig-clear-btn {
+  font-size: 12px;
+  font-weight: 700;
+  color: #dc2626;
   cursor: pointer;
-  transition: all 0.2s ease;
-  z-index: 5;
 }
 
-.sig__clear:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.sig__hint {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.78rem;
-  color: var(--text-subtle);
-  pointer-events: none;
-  margin: 0;
-  white-space: nowrap;
+.km-sig-clear-btn:hover {
+  text-decoration: underline;
 }
 
 /* Action Buttons */
-.portal-actions {
+.km-nav-buttons {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--gray-border);
-}
-
-.portal-actions--split {
   justify-content: space-between;
+  gap: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
 }
 
-.portal-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.95rem 1.85rem;
-  border-radius: var(--r-sm);
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  color: #ffffff;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
+.km-prev-btn {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
   transition: all 0.2s ease;
-  box-shadow: var(--shadow-accent);
 }
 
-.portal-btn-primary:hover:not(:disabled) {
-  background: var(--accent-hover);
+.km-prev-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.km-next-btn {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  margin-left: auto;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.km-next-btn:hover {
+  background: #1d4ed8;
   transform: translateY(-1px);
 }
 
-.portal-btn-secondary {
+.km-submit-btn {
+  background: #1d4ed8;
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  transition: all 0.2s ease;
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.95rem 1.5rem;
-  border-radius: var(--r-sm);
-  background: var(--bg-input);
-  border: 1px solid var(--gray-border);
-  color: var(--text-muted);
-  font-family: var(--font-sans);
-  font-size: 0.92rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(29, 78, 216, 0.25);
 }
 
-.portal-btn-secondary:hover:not(:disabled) {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.portal-submit-error {
-  padding: 0.9rem 1.15rem;
-  background: #FFF8F3;
-  border: 1px solid rgba(158, 103, 64, 0.35);
-  border-radius: var(--r-sm);
-  color: #8C4820;
-  font-size: 0.88rem;
-  margin-top: 1.25rem;
-  line-height: 1.45;
-}
-
-.portal-submit-error a {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* ══════════════════════════════════════════
-   SUCCESS CONFIRMATION BANNER & RECEIPT
-   ══════════════════════════════════════════ */
-.portal-success-banner {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 2.25rem 2rem;
-  background: #ffffff;
-  border: 1.5px solid rgba(29, 78, 216, 0.25);
-  border-left: 5px solid var(--accent);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-md);
-  margin-bottom: 2rem;
-  box-sizing: border-box;
-}
-
-.portal-success-icon-wrap {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 1.5px solid rgba(158, 103, 64, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
-}
-
-.portal-success-text {
-  flex: 1;
-}
-
-.portal-success-badge {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #2e6930;
-  background: rgba(46, 105, 48, 0.1);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--r-full);
-  margin-bottom: 0.65rem;
-}
-
-.portal-success-title {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin: 0 0 0.5rem 0;
-  line-height: 1.25;
-}
-
-.portal-success-desc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin: 0 0 1.25rem 0;
-}
-
-.portal-success-next-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  background: #ffffff;
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  padding: 1.15rem;
-}
-
-.portal-step-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 0.84rem;
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-
-.portal-step-dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* Success Receipt Layout */
-.app-review {
-  max-width: 780px;
-  margin: 0 auto;
-  background: #ffffff;
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
-
-.app-review__body {
-  padding: 2.25rem 2rem;
-}
-
-.app-review__header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--gray-border);
-}
-
-.app-review__header-row h3 {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin: 0;
-}
-
-.app-review__date-badge {
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: var(--accent);
-  background: var(--accent-light);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--r-full);
-}
-
-.app-review__section {
-  background: var(--bg-input);
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.app-review__section h4 {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-top: 0;
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.app-review__section.highlight-prop {
-  border-left: 3px solid var(--accent);
-}
-
-.app-review__row {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  font-size: 0.86rem;
-}
-
-.app-review__row:last-child {
-  border-bottom: none;
-}
-
-.app-review__row span {
-  color: var(--text-muted);
-}
-
-.app-review__row strong {
-  color: var(--text-main);
-}
-
-.app-review__sig-card {
-  background: #ffffff;
-  border: 1px solid var(--gray-border);
-  border-radius: var(--r-sm);
-  padding: 0.75rem;
-  display: flex;
-  justify-content: center;
-}
-
-.app-review__sig {
-  max-width: 100%;
-  height: auto;
-  max-height: 120px;
-  display: block;
-}
-
-.app-review__actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin-top: 2rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--gray-border);
-}
-
-.app-review__btn-primary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 1.75rem;
-  border-radius: var(--r-sm);
-  background: var(--accent);
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-accent);
-}
-
-.app-review__btn-primary:hover {
-  background: var(--accent-hover);
+.km-submit-btn:hover {
+  background: #1e40af;
   transform: translateY(-1px);
 }
 
-.app-review__btn-secondary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  border-radius: var(--r-sm);
-  background: var(--bg-surface);
-  border: 1px solid var(--gray-border);
-  color: var(--text-main);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+.km-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-.app-review__btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.app-review__btn-home {
+/* Success View */
+.km-success-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 40px 32px;
   text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.08);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.km-success-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #059669;
+  border: 2px solid #a7f3d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 20px auto;
+}
+
+.km-success-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.km-success-desc {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 28px auto;
+}
+
+.km-success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.km-success-fb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 13px 24px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
-  padding: 0.35rem 0;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.app-review__btn-home:hover {
-  color: var(--accent);
+.km-success-fb-btn:hover {
+  background: #1d4ed8;
 }
 
-/* Mobile Responsive */
-@media (max-width: 680px) {
-  .portal-header__inner {
-    height: 60px;
-  }
-  .portal-header__back {
-    font-size: 0.78rem;
-  }
-  .portal-header__brand-name {
-    font-size: 1.05rem;
-  }
-  .portal-grid-2, .portal-grid-3 {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-  .portal-methods-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .portal-trust-strip {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-  .portal-trust-badge {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .portal-card {
-    padding: 1.5rem 1rem;
-  }
-  .portal-pane-title {
-    font-size: 1.4rem;
-  }
-  .portal-stepper {
-    padding: 0;
-  }
-  .portal-step__label {
-    font-size: 0.74rem;
-  }
-  .portal-actions--split {
-    flex-direction: column-reverse;
-    gap: 0.75rem;
-  }
-  .portal-actions--split button {
-    width: 100%;
-  }
-  .portal-verification-box {
-    padding: 1.15rem 0.85rem;
-  }
-  .sig__canvas {
-    height: 150px;
-  }
-  .portal-success-banner {
-    flex-direction: column;
-    padding: 1.5rem 1.25rem;
-    gap: 1rem;
-  }
-  .portal-success-title {
-    font-size: 1.35rem;
-  }
+.km-success-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 13px 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.km-success-home-btn:hover {
+  background: #e2e8f0;
 }
