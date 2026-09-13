@@ -1,0 +1,241 @@
+.residences-section {
+  padding: 6rem 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.residences-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.residences-header .section-sub {
+  margin: 0 auto;
+}
+
+.residences-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.residence-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.residence-card:hover {
+  border-color: rgba(158, 103, 64, 0.4);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.residence-card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background: #111;
+}
+
+.residence-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.residence-card:hover .residence-card__image {
+  transform: scale(1.03);
+}
+
+.residence-card__status {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(26, 24, 22, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--r-full);
+}
+
+.residence-card__body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.residence-card__type {
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
+
+.residence-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.residence-card__specs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 1.15rem;
+}
+
+.spec-dot {
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.residence-card__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.residence-feature-tag {
+  font-size: 0.74rem;
+  padding: 0.25rem 0.6rem;
+  background: var(--bg);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--r-sm);
+  color: var(--text-muted);
+}
+
+.residence-card__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--gray-border);
+}
+
+.residence-card__rent strong {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.residence-card__rent span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.residence-card__deposit {
+  font-size: 0.76rem;
+  color: var(--text-subtle);
+  margin-top: 0.15rem;
+}
+
+.residence-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.residence-card__btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Inquiry Box */
+.residences-inquiry-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.25rem 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.residences-inquiry-box__content h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.residences-inquiry-box__content p {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.residences-inquiry-box__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding: 0.85rem 1.65rem;
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-accent);
+}
+
+.residences-inquiry-box__btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 880px) {
+  .residences-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .residences-inquiry-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem;
+  }
+  .residences-inquiry-box__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

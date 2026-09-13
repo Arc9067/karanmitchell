@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Light Mode (Default Minimal Warm Editorial) ── */
+:root, [data-theme="light"] {
+  --bg:            #faf8f5;
+  --bg-surface:    #ffffff;
+  --bg-card:       #ffffff;
+  --bg-input:      #fdfbf7;
+  --bg-alt:        #f3ede4;
+
+  --accent:        #9e6740;
+  --accent-hover:  #7e4f2e;
+  --accent-light:  #f6efe8;
+  --accent-pale:   rgba(158, 103, 64, 0.08);
+  --accent-glow:   rgba(158, 103, 64, 0.18);
+
+  --text-main:     #1a1816;
+  --text-muted:    #5c574f;
+  --text-subtle:   #8c867c;
+  --gray-border:   #e7e1d6;
+  --border-card:   1px solid var(--gray-border);
+
+  --shadow-sm:     0 2px 8px rgba(26, 24, 22, 0.04);
+  --shadow-md:     0 8px 24px rgba(26, 24, 22, 0.06);
+  --shadow-lg:     0 16px 36px rgba(26, 24, 22, 0.09);
+  --shadow-accent: 0 8px 20px rgba(158, 103, 64, 0.2);
+
+  /* Legacy aliases for compatibility */
+  --orange:        var(--accent);
+  --orange-hover:  var(--accent-hover);
+  --orange-light:  var(--accent-light);
+  --orange-pale:   var(--accent-pale);
+  --orange-glow:   var(--accent-glow);
+}
+
+/* ── Dark Mode (Refined Deep Espresso) ── */
+[data-theme="dark"] {
+  --bg:            #11100e;
+  --bg-surface:    #181614;
+  --bg-card:       #1c1a17;
+  --bg-input:      #151412;
+  --bg-alt:        #1f1c19;
+
+  --accent:        #c28458;
+  --accent-hover:  #d9996c;
+  --accent-light:  rgba(194, 132, 88, 0.15);
+  --accent-pale:   rgba(194, 132, 88, 0.12);
+  --accent-glow:   rgba(194, 132, 88, 0.25);
+
+  --text-main:     #f8f6f2;
+  --text-muted:    #aba49a;
+  --text-subtle:   #736c62;
+  --gray-border:   rgba(255, 255, 255, 0.09);
+  --border-card:   1px solid rgba(255, 255, 255, 0.09);
+
+  --shadow-sm:     0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md:     0 12px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg:     0 20px 48px rgba(0, 0, 0, 0.6);
+
+  /* Legacy aliases for compatibility */
+  --orange:        var(--accent);
+  --orange-hover:  var(--accent-hover);
+  --orange-light:  var(--accent-light);
+  --orange-pale:   var(--accent-pale);
+  --orange-glow:   var(--accent-glow);
+}
+
+:root {
+  --font-serif:    'Playfair Display', Georgia, serif;
+  --font-sans:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display:  var(--font-serif);
+  --font-body:     var(--font-sans);
+
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+  --r-full: 9999px;
+}
+
+html { scroll-behavior: smooth; }
+
+input, select, textarea {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Layout container ── */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── Section labels ── */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--accent-light);
+  border: 1px solid rgba(158, 103, 64, 0.2);
+  border-radius: var(--r-full);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.section-title span {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 620px;
+  line-height: 1.65;
+}
