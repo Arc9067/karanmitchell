@@ -53,9 +53,6 @@ export default function Nav() {
 
         {/* Desktop Navigation Links */}
         <nav className="nav-links-desktop">
-          <button onClick={() => scrollTo("residences")} className="nav-link">
-            Available Homes
-          </button>
           <button onClick={() => scrollTo("about")} className="nav-link">
             About Karen
           </button>
@@ -102,9 +99,6 @@ export default function Nav() {
       {/* Mobile Drawer */}
       {menuOpen && (
         <div className="nav-mobile-menu">
-          <button onClick={() => scrollTo("residences")} className="nav-mobile-link">
-            Available Homes
-          </button>
           <button onClick={() => scrollTo("about")} className="nav-mobile-link">
             About Karen
           </button>

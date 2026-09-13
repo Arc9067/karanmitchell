@@ -35,14 +35,16 @@ export default function Hero() {
                 <span>Message on Facebook →</span>
               </a>
               <a
-                href="#residences"
+                href="/application"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("residences")?.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState({}, "", "/application");
+                  window.dispatchEvent(new Event("popstate"));
+                  window.scrollTo({ top: 0, behavior: "instant" });
                 }}
                 className="hero-secondary-btn"
               >
-                <span>Available Residences ↓</span>
+                <span>Apply Online →</span>
               </a>
             </div>
 

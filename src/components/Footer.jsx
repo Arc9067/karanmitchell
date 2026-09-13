@@ -51,7 +51,6 @@ export default function Footer() {
           <div className="footer-nav-col">
             <h4 className="footer-col-heading">Navigation</h4>
             <div className="footer-nav-links">
-              <button onClick={() => scrollTo("residences")} className="footer-link">Available Homes</button>
               <button onClick={() => scrollTo("about")} className="footer-link">About Karen</button>
               <button onClick={() => scrollTo("process")} className="footer-link">Leasing Process</button>
               <a
@@ -73,7 +72,7 @@ export default function Footer() {
           <div className="footer-contact-col">
             <h4 className="footer-col-heading">Direct Inquiries</h4>
             <p className="footer-contact-desc">
-              For available listings, private showings, and rental inquiries — contact Karen Mitchell directly.
+              For real-time availability, private showings, and rental questions — message Karen Mitchell directly on Facebook.
             </p>
             <a
               href={FB_URL}

@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import Residences from "./components/Residences";
 import About from "./components/About";
 import HowItWorks from "./components/HowItWorks";
 import Footer from "./components/Footer";
@@ -24,7 +23,6 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Residences />
       <About />
       <HowItWorks />
       <Footer />

@@ -7,26 +7,26 @@ const FB_URL = "https://www.facebook.com/share/1EQDA9pSYB/?mibextid=wwXIfr";
 const STEPS = [
   {
     number: "01",
-    title: "Browse Available Residences",
-    desc: "Explore Karen's curated selection of verified, move-in ready homes above. Each property is personally inspected and maintained to a high standard.",
-    icon: "🏠",
-  },
-  {
-    number: "02",
-    title: "Inquire Directly on Facebook",
-    desc: "Message Karen directly via Facebook with the home you're interested in and your ideal move-in date. Expect a prompt, honest response — no bots, no call queues.",
+    title: "Connect on Facebook",
+    desc: "Message Karen Mitchell directly with your preferred neighborhood, move-in timetable, and bedroom requirements for real-time available listings.",
     icon: "💬",
   },
   {
+    number: "02",
+    title: "Review Matching Residences",
+    desc: "Receive curated, physically verified options matching your criteria. Every home is clean, move-in ready, and accurately represented.",
+    icon: "🏠",
+  },
+  {
     number: "03",
-    title: "Schedule a Private Showing",
-    desc: "Karen arranges a private, in-person showing at your convenience. View the home, ask questions, and get straightforward answers before committing.",
+    title: "Private In-Person Showing",
+    desc: "Karen arranges a private showing at your convenience. Walk through the residence, inspect the details, and get honest answers.",
     icon: "🗓️",
   },
   {
     number: "04",
-    title: "Apply & Move In",
-    desc: "Complete your secure digital rental application online. Once approved, receive your digital lease and keys. It's that straightforward.",
+    title: "Fast Application & Keys",
+    desc: "Complete your secure online application. Once approved, execute your lease agreement and receive your keys smoothly.",
     icon: "✅",
   },
 ];
@@ -58,7 +58,7 @@ export default function HowItWorks() {
         </div>
 
         <div className="how-bottom-cta">
-          <p>Ready to get started? Message Karen Mitchell directly on Facebook.</p>
+          <p>Ready to find your next home? Message Karen Mitchell directly on Facebook.</p>
           <a
             href={FB_URL}
             target="_blank"
